@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="table">
+        <br>
+        <h1>Lista de Usuários</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Codinome</th>
+                    <th scope="col">Grupo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td scope="row">{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.telephone}}</td>
+                        <td>{{user.codename}}</td>
+                        <td>{{user.get_group_display}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
